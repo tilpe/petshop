@@ -3,9 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
+    "start": "node dist/server.js",
+    "postinstall": "tsc & copyfiles -u 1 src/**/*.mustache dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "nodemon -e ts,json,mustache src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavo-tilpe/petshop.git"
   },
   "author": "",
   "license": "ISC",
@@ -14,7 +23,8 @@
     "@types/mustache-express": "^1.2.2",
     "@types/node": "^18.11.3",
     "@types/sequelize": "^4.28.14",
-    "@types/validator": "^13.7.8"
+    "@types/validator": "^13.7.8",
+    "copyfiles": "^2.4.1"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
